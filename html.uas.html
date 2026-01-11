@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Bakso Rusuk Pak Sabar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<section id="loginPage" class="page active">
+    <div class="card">
+        <h1>Bakso Rusuk Pak Sabar</h1>
+        <p class="subtitle">Authentic Taste, Modern Service</p>
+
+        <label>Role</label>
+        <select id="role">
+            <option>Pelanggan (Customer)</option>
+            <option>Waiter (Admin)</option>
+        </select>
+
+        <label>Username</label>
+        <input type="text" id="username" placeholder="Enter username">
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="••••••">
+
+        <button onclick="login()">Sign In</button>
+
+        <div class="demo">
+            <strong>Demo:</strong><br>
+            Customer: user / pass<br>
+            Admin: admin / admin
+        </div>
+    </div>
+</section>
+
+<!-- MENU -->
+<section id="menuPage" class="page">
+    <h2>Menu Bakso</h2>
+
+    <div class="menu-item">
+        <h3>Bakso Rusuk Biasa</h3>
+        <p>Rp 25.000</p>
+        <button onclick="addToCart('Bakso Rusuk Biasa',25000)">Tambah</button>
+    </div>
+
+    <div class="menu-item">
+        <h3>Bakso Rusuk Jumbo</h3>
+        <p>Rp 40.000</p>
+        <button onclick="addToCart('Bakso Rusuk Jumbo',40000)">Tambah</button>
+    </div>
+
+    <div class="menu-item">
+        <h3>Bakso Rusuk Special</h3>
+        <p>Rp 50.000</p>
+        <button onclick="addToCart('Bakso Rusuk Special',50000)">Tambah</button>
+    </div>
+
+    <div class="cart">
+        <h3>Keranjang</h3>
+        <ul id="cartList"></ul>
+        <p>Total: <strong id="totalHarga">Rp 0</strong></p>
+        <button onclick="goPayment()">Checkout</button>
+    </div>
+</section>
+
+<!-- PEMBAYARAN -->
+<section id="paymentPage" class="page">
+    <div class="card">
+        <h2>Pembayaran</h2>
+        <p>Total Tagihan: <strong id="totalBayar"></strong></p>
+
+        <label>Metode Pembayaran</label>
+        <select>
+            <option>Cash</option>
+            <option>QRIS</option>
+        </select>
+
+        <button onclick="finishPayment()">Bayar Sekarang</button>
+        <button class="secondary" onclick="backMenu()">Batalkan</button>
+    </div>
+</section>
+
+<!-- STRUK -->
+<section id="receiptPage" class="page">
+    <div class="card">
+        <h2>Struk Pembelian</h2>
+        <p>Nama: <span id="namaUser"></span></p>
+        <p>Tanggal: <span id="tanggal"></span></p>
+
+        <ul id="strukList"></ul>
+
+        <h3>Total: <span id="strukTotal"></span></h3>
+
+        <button onclick="printStruk()">Cetak Struk</button>
+        <button class="secondary" onclick="backMenu()">Kembali ke Menu</button>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
